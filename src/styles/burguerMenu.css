@@ -1,0 +1,107 @@
+:root {
+    --white: #FFF;
+    --black: #000;
+
+    --color-bar: #fff;
+    --bar-button: #8e44fda1;
+    --bar-button-hover: #8e44fdb4;
+    --bar-button-hover-border: #8635ff;
+
+    --transparent: #00000000;
+}
+
+.burguer-menu{
+    margin: 10px;
+}
+
+.burguer-button {
+    border: 1px solid transparent;
+    background: var(--transparent);
+    width: 56px;
+    height: 56px;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    padding: 0;
+    scale: 0.6;
+    border-radius: 100%;
+    overflow: hidden;
+    transition: 0.175s;
+    margin: -19px;
+}
+
+.burguer-button:hover {
+    border: 1px solid transparent;
+
+    & .burger-2 .bar{
+        background-color: var(--purple1);
+    }
+}
+
+/* burger-2 */
+
+.burger-2 {
+    scale: 1.1;
+    --gap: 5px;
+    --height-bar: 2px;
+    --pos-y-bar-one: 0;
+    --pos-y-bar-three: 0;
+    --scale-bar: 1;
+    --rotate-bar-one: 0;
+    --rotate-bar-three: 0;
+    width: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+    cursor: pointer;
+    position: relative;
+}
+
+.burger-2 .bar {
+    position: relative;
+    height: var(--height-bar);
+    width: 100%;
+    border-radius: 0.5rem;
+    background-color: var(--color-bar);
+}
+
+.burger-2 .bar--1 {
+    top: var(--pos-y-bar-one);
+    transform: rotate(var(--rotate-bar-one));
+    transition: top 200ms 100ms, transform 100ms;
+}
+
+.burger-2 .bar--2 {
+    transform: scaleX(var(--scale-bar));
+    transition: transform 150ms 100ms;
+}
+
+.burger-2 .bar--3 {
+    bottom: var(--pos-y-bar-three);
+    transform: rotate(var(--rotate-bar-three));
+    transition: bottom 200ms 100ms, transform 100ms;
+}
+
+.is-closed.burger-2>.bar--1 {
+    transition: top 200ms, transform 200ms 100ms;
+}
+
+.is-closed.burger-2 .bar--3 {
+    transition: bottom 200ms, transform 200ms 100ms;
+}
+
+.is-closed.burger-2 {
+    --pos-y-bar-one: calc(var(--gap) + var(--height-bar));
+    --pos-y-bar-three: calc(var(--gap) + var(--height-bar));
+    --scale-bar: 0;
+    --rotate-bar-one: 45deg;
+    --rotate-bar-three: -45deg;
+}
+
+@media screen and (max-width: 1000px) {
+    .burguer-button:hover{
+        & .burger-2 .bar{
+            background-color: var(--white);
+        }
+    }
+}

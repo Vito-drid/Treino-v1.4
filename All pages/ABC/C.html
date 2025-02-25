@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../../src/styles/global.css">
+    <link rel="shortcut icon" href="../../src/source/dumbell.svg" type="image/x-icon">
+    <title>ABC-C</title>
+</head>
+
+<body>
+    <video autoplay loop muted playsinline id="background-video">
+        <source src="../../src/source/blackhole.webm" type="video/mp4">
+        Não foi possivel carregar o video
+    </video>
+
+    <nav>
+        <div class="nav-list-container">
+            <div class="logo-container" onclick="window.location.reload();">
+                <i class="fa-solid fa-dumbbell"></i>
+                <p>calisthenics</p>
+            </div>
+
+            <ul class="nav-list">
+                <li class="nav-list-item"><a class="nav-btn" href="Main-ABC.html"><i
+                            class="fa-solid fa-left-long"></i></a></li>
+
+                <li class="nav-list-item"><a class="nav-btn" href="../../index.html"><i
+                            class="fa-solid fa-house"></i></a></li>
+
+                <li class="nav-list-item">
+                    <div class="burguer-menu">
+                        <button onclick="this.querySelector('span').classList.toggle('is-closed'); toggleSlider();"
+                            class="burguer-button">
+                            <span class="burger-2">
+                                <span class="bar bar--1"></span>
+                                <span class="bar bar--2"></span>
+                                <span class="bar bar--3"></span>
+                            </span>
+                        </button>
+                    </div>
+
+                    <div class="slider" style="display: none;">
+                        <ul class="slider-list">
+                            <li class="slider-slist-item">
+                                <a class="slider-nav-list-link" href="https://www.linkedin.com/in/victoralkmim-work/"
+                                    target="_blank"><i class="fa-brands fa-linkedin"></i>Linkedin
+                                </a>
+                            </li>
+                            <li class="slider-slist-item">
+                                <a class="slider-nav-list-link" href="https://github.com/Vito-drid" target="_blank"><i
+                                        class="fa-brands fa-github"></i>GitHub
+                                </a>
+                            </li>
+                            <li class="slider-list-time slider-slist-item">
+                                <i class="fa-regular fa-calendar"></i>
+
+                                <div class="timeCalisthenics">
+                                    <h1>Inicio: 6 de fevereiro de 2023</h1>
+                                    <p id="tempo"></p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+
+            <p class="Victor-name" style="color: white;">&lt;Victor2024/&gt;</p>
+
+        </div>
+    </nav>
+
+    <main class="main-tasks">
+        <div class="timer-btn">
+            <div id="cronometro">00:00:00</div>
+
+            <button class="cronometro-reset-btn">
+                <i class="fa-solid fa-clock-rotate-left"></i>
+            </button>
+        </div>
+
+        <div class="tarefa-lista">
+
+            <div class="tarefa" data-id="37">
+                <div class="tarefa-head">
+                    <h2 class="exercice-title">Exercise 37</h2>
+                    <button class="task-config-btn">
+                        <i class="fa-solid fa-gears task-config"></i>
+                    </button>
+                </div>
+                <div class="checkbox-group">
+                    <label class="check-label"><input type="checkbox" class="checkbox-serie"> 1</label>
+                    <label class="check-label"><input type="checkbox" class="checkbox-serie"> 2</label>
+                    <label class="check-label"><input type="checkbox" class="checkbox-serie"> 3</label>
+                    <label class="check-label"><input type="checkbox" class="checkbox-serie"> 4</label>
+                    <label class="check-label"><input type="checkbox" class="checkbox-serie"> 5</label>
+                    <label class="check-label"><input type="checkbox" class="checkbox-serie"> 6</label>
+                    <label class="check-label"><input type="checkbox" class="checkbox-serie"> 7</label>
+                    <label class="check-label"><input type="checkbox" class="checkbox-serie"> 8</label>
+                </div>
+                <div class="edit-task-btn">
+                    <button class="edit-task-title">
+                        <i class="fa-solid fa-pen-to-square"></i>
+                    </button>
+                    <button class="edit-task-check">
+                        <i class="fa-solid fa-list-ul"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="tarefa" data-id="38">
+                <div class="tarefa-head">
+                    <h2 class="exercice-title">Exercise 38</h2>
+                    <button class="task-config-btn">
+                        <i class="fa-solid fa-gears task-config"></i>
+                    </button>
+                </div>
+                <div class="checkbox-group">
+                    <label class="check-label"><input type="checkbox" class="checkbox-serie"> 1</label>
+                    <label class="check-label"><input type="checkbox" class="checkbox-serie"> 2</label>
+                    <label class="check-label"><input type="checkbox" class="checkbox-serie"> 3</label>
+                    <label class="check-label"><input type="checkbox" class="checkbox-serie"> 4</label>
+                    <label class="check-label"><input type="checkbox" class="checkbox-serie"> 5</label>
+                    <label class="check-label"><input type="checkbox" class="checkbox-serie"> 6</label>
+                    <label class="check-label"><input type="checkbox" class="checkbox-serie"> 7</label>
+                    <label class="check-label"><input type="checkbox" class="checkbox-serie"> 8</label>
+                </div>
+                <div class="edit-task-btn">
+                    <button class="edit-task-title">
+                        <i class="fa-solid fa-pen-to-square"></i>
+                    </button>
+                    <button class="edit-task-check">
+                        <i class="fa-solid fa-list-ul"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="tarefa" data-id="39">
+                <div class="tarefa-head">
+                    <h2 class="exercice-title">Exercise 39</h2>
+                    <button class="task-config-btn">
+                        <i class="fa-solid fa-gears task-config"></i>
+                    </button>
+                </div>
+                <div class="checkbox-group">
+                    <label class="check-label"><input type="checkbox" class="checkbox-serie"> 1</label>
+                    <label class="check-label"><input type="checkbox" class="checkbox-serie"> 2</label>
+                    <label class="check-label"><input type="checkbox" class="checkbox-serie"> 3</label>
+                    <label class="check-label"><input type="checkbox" class="checkbox-serie"> 4</label>
+                    <label class="check-label"><input type="checkbox" class="checkbox-serie"> 5</label>
+                    <label class="check-label"><input type="checkbox" class="checkbox-serie"> 6</label>
+                    <label class="check-label"><input type="checkbox" class="checkbox-serie"> 7</label>
+                    <label class="check-label"><input type="checkbox" class="checkbox-serie"> 8</label>
+                </div>
+                <div class="edit-task-btn">
+                    <button class="edit-task-title">
+                        <i class="fa-solid fa-pen-to-square"></i>
+                    </button>
+                    <button class="edit-task-check">
+                        <i class="fa-solid fa-list-ul"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="tarefa" data-id="40">
+                <div class="tarefa-head">
+                    <h2 class="exercice-title">Exercise 40</h2>
+                    <button class="task-config-btn">
+                        <i class="fa-solid fa-gears task-config"></i>
+                    </button>
+                </div>
+                <div class="checkbox-group">
+                    <label class="check-label"><input type="checkbox" class="checkbox-serie"> 1</label>
+                    <label class="check-label"><input type="checkbox" class="checkbox-serie"> 2</label>
+                    <label class="check-label"><input type="checkbox" class="checkbox-serie"> 3</label>
+                    <label class="check-label"><input type="checkbox" class="checkbox-serie"> 4</label>
+                    <label class="check-label"><input type="checkbox" class="checkbox-serie"> 5</label>
+                    <label class="check-label"><input type="checkbox" class="checkbox-serie"> 6</label>
+                    <label class="check-label"><input type="checkbox" class="checkbox-serie"> 7</label>
+                    <label class="check-label"><input type="checkbox" class="checkbox-serie"> 8</label>
+                </div>
+                <div class="edit-task-btn">
+                    <button class="edit-task-title">
+                        <i class="fa-solid fa-pen-to-square"></i>
+                    </button>
+                    <button class="edit-task-check">
+                        <i class="fa-solid fa-list-ul"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="tarefa" data-id="41">
+                <div class="tarefa-head">
+                    <h2 class="exercice-title">Exercise 41</h2>
+                    <button class="task-config-btn">
+                        <i class="fa-solid fa-gears task-config"></i>
+                    </button>
+                </div>
+                <div class="checkbox-group">
+                    <label class="check-label"><input type="checkbox" class="checkbox-serie"> 1</label>
+                    <label class="check-label"><input type="checkbox" class="checkbox-serie"> 2</label>
+                    <label class="check-label"><input type="checkbox" class="checkbox-serie"> 3</label>
+                    <label class="check-label"><input type="checkbox" class="checkbox-serie"> 4</label>
+                    <label class="check-label"><input type="checkbox" class="checkbox-serie"> 5</label>
+                    <label class="check-label"><input type="checkbox" class="checkbox-serie"> 6</label>
+                    <label class="check-label"><input type="checkbox" class="checkbox-serie"> 7</label>
+                    <label class="check-label"><input type="checkbox" class="checkbox-serie"> 8</label>
+                </div>
+                <div class="edit-task-btn">
+                    <button class="edit-task-title">
+                        <i class="fa-solid fa-pen-to-square"></i>
+                    </button>
+                    <button class="edit-task-check">
+                        <i class="fa-solid fa-list-ul"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="tarefa" data-id="42">
+                <div class="tarefa-head">
+                    <h2 class="exercice-title">Exercise 42</h2>
+                    <button class="task-config-btn">
+                        <i class="fa-solid fa-gears task-config"></i>
+                    </button>
+                </div>
+                <div class="checkbox-group">
+                    <label class="check-label"><input type="checkbox" class="checkbox-serie"> 1</label>
+                    <label class="check-label"><input type="checkbox" class="checkbox-serie"> 2</label>
+                    <label class="check-label"><input type="checkbox" class="checkbox-serie"> 3</label>
+                    <label class="check-label"><input type="checkbox" class="checkbox-serie"> 4</label>
+                    <label class="check-label"><input type="checkbox" class="checkbox-serie"> 5</label>
+                    <label class="check-label"><input type="checkbox" class="checkbox-serie"> 6</label>
+                    <label class="check-label"><input type="checkbox" class="checkbox-serie"> 7</label>
+                    <label class="check-label"><input type="checkbox" class="checkbox-serie"> 8</label>
+                </div>
+                <div class="edit-task-btn">
+                    <button class="edit-task-title">
+                        <i class="fa-solid fa-pen-to-square"></i>
+                    </button>
+                    <button class="edit-task-check">
+                        <i class="fa-solid fa-list-ul"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="tarefa" data-id="43">
+                <div class="tarefa-head">
+                    <h2 class="exercice-title">Exercise 43</h2>
+                    <button class="task-config-btn">
+                        <i class="fa-solid fa-gears task-config"></i>
+                    </button>
+                </div>
+                <div class="checkbox-group">
+                    <label class="check-label"><input type="checkbox" class="checkbox-serie"> 1</label>
+                    <label class="check-label"><input type="checkbox" class="checkbox-serie"> 2</label>
+                    <label class="check-label"><input type="checkbox" class="checkbox-serie"> 3</label>
+                    <label class="check-label"><input type="checkbox" class="checkbox-serie"> 4</label>
+                    <label class="check-label"><input type="checkbox" class="checkbox-serie"> 5</label>
+                    <label class="check-label"><input type="checkbox" class="checkbox-serie"> 6</label>
+                    <label class="check-label"><input type="checkbox" class="checkbox-serie"> 7</label>
+                    <label class="check-label"><input type="checkbox" class="checkbox-serie"> 8</label>
+                </div>
+                <div class="edit-task-btn">
+                    <button class="edit-task-title">
+                        <i class="fa-solid fa-pen-to-square"></i>
+                    </button>
+                    <button class="edit-task-check">
+                        <i class="fa-solid fa-list-ul"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="tarefa" data-id="44">
+                <div class="tarefa-head">
+                    <h2 class="exercice-title">Exercise 44</h2>
+                    <button class="task-config-btn">
+                        <i class="fa-solid fa-gears task-config"></i>
+                    </button>
+                </div>
+                <div class="checkbox-group">
+                    <label class="check-label"><input type="checkbox" class="checkbox-serie"> 1</label>
+                    <label class="check-label"><input type="checkbox" class="checkbox-serie"> 2</label>
+                    <label class="check-label"><input type="checkbox" class="checkbox-serie"> 3</label>
+                    <label class="check-label"><input type="checkbox" class="checkbox-serie"> 4</label>
+                    <label class="check-label"><input type="checkbox" class="checkbox-serie"> 5</label>
+                    <label class="check-label"><input type="checkbox" class="checkbox-serie"> 6</label>
+                    <label class="check-label"><input type="checkbox" class="checkbox-serie"> 7</label>
+                    <label class="check-label"><input type="checkbox" class="checkbox-serie"> 8</label>
+                </div>
+                <div class="edit-task-btn">
+                    <button class="edit-task-title">
+                        <i class="fa-solid fa-pen-to-square"></i>
+                    </button>
+                    <button class="edit-task-check">
+                        <i class="fa-solid fa-list-ul"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="tarefa" data-id="45">
+                <div class="tarefa-head">
+                    <h2 class="exercice-title">Exercise 45</h2>
+                    <button class="task-config-btn">
+                        <i class="fa-solid fa-gears task-config"></i>
+                    </button>
+                </div>
+                <div class="checkbox-group">
+                    <label class="check-label"><input type="checkbox" class="checkbox-serie"> 1</label>
+                    <label class="check-label"><input type="checkbox" class="checkbox-serie"> 2</label>
+                    <label class="check-label"><input type="checkbox" class="checkbox-serie"> 3</label>
+                    <label class="check-label"><input type="checkbox" class="checkbox-serie"> 4</label>
+                    <label class="check-label"><input type="checkbox" class="checkbox-serie"> 5</label>
+                    <label class="check-label"><input type="checkbox" class="checkbox-serie"> 6</label>
+                    <label class="check-label"><input type="checkbox" class="checkbox-serie"> 7</label>
+                    <label class="check-label"><input type="checkbox" class="checkbox-serie"> 8</label>
+                </div>
+                <div class="edit-task-btn">
+                    <button class="edit-task-title">
+                        <i class="fa-solid fa-pen-to-square"></i>
+                    </button>
+                    <button class="edit-task-check">
+                        <i class="fa-solid fa-list-ul"></i>
+                    </button>
+                </div>
+            </div>                      
+        </div>
+    </main>
+
+    <script src="../../src/scripts/global.js"></script>
+    <script>
+        function calcularTempo() {
+            const dataInicio = new Date('2023-02-06');
+            const dataAtual = new Date();
+
+            let anos = dataAtual.getFullYear() - dataInicio.getFullYear();
+            let meses = dataAtual.getMonth() - dataInicio.getMonth();
+            let dias = dataAtual.getDate() - dataInicio.getDate();
+
+            if (dias < 0) {
+                meses--;
+                const ultimoDiaMesAnterior = new Date(dataAtual.getFullYear(), dataAtual.getMonth(), 0).getDate();
+                dias += ultimoDiaMesAnterior;
+            }
+
+            if (meses < 0) {
+                anos--;
+                meses += 12;
+            }
+
+            // Calcular semanas e dias baseados no dia 6 de cada mês
+            const primeiroDiaDoCiclo = new Date(dataAtual.getFullYear(), dataAtual.getMonth(), 6);
+            if (dataAtual < primeiroDiaDoCiclo) {
+                primeiroDiaDoCiclo.setMonth(primeiroDiaDoCiclo.getMonth() - 1);
+            }
+
+            const diasDesdeInicio = Math.floor((dataAtual - primeiroDiaDoCiclo) / (1000 * 60 * 60 * 24));
+            const semanas = Math.floor(diasDesdeInicio / 7);
+            const diasRestantes = diasDesdeInicio % 7;
+
+            document.getElementById('tempo').textContent =
+                `${anos} anos, ${meses} meses, ${semanas} semanas e ${diasRestantes} dias`;
+        }
+
+        window.onload = calcularTempo;
+
+    </script>
+
+</body>
+
+</html>

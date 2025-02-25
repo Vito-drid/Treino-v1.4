@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url(exercises.css);
+@import url(burguerMenu.css);
+@import url(nav.css);
+@import url(cards-menu.css);
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Open Sans", sans-serif;
+}
+
+:root{
+    --white: white;
+    --bg-default: #030014;
+    --timer-black: rgba(7, 7, 7, 0.4);
+    --nav-bg: rgba(7, 7, 7, 0.3);
+    --slider-bg: rgba(7, 7, 7, 0.4);
+    --purple1: #8635ff;
+    --purple2: #100233;
+    --purple3: #430ccc;
+    --purple4: #27057c;
+    --purple5: #0c0127;
+    --purple-gradient: linear-gradient(45deg, rgba(21,3,66,0.2) 0%, rgba(28,0,96,0.2) 32%, rgba(21,3,66,0.2) 52%);
+
+    --card-shadow1: black;
+    --card-shadow2: rgba(0, 0, 0, 0.644);
+}
+
+body {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    font-family: Arial, sans-serif;
+    background: var(--bg-default);
+    color: var(--white);
+    overflow-x: hidden;
+}

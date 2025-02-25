@@ -1,0 +1,162 @@
+.main-tasks{
+    margin-top: 5em;
+}
+
+.tarefa-lista {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-bottom: 6.5em;
+    /* width: 100%; */
+}
+
+.tarefa {
+    background: var(--purple-gradient);
+    width: 18em;
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    border-radius: 20px;
+    border-top: 1px solid var(--purple3);
+    border-left: 1px solid var(--purple4);
+    border-right: 1px solid var(--purple4);
+    border-bottom: 1px solid var(--purple5);
+}
+
+.tarefa-head{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.task-config-btn{
+    border: 1px solid transparent;
+    background: transparent;
+    cursor: pointer;
+}
+
+.task-config{
+    font-size: 1.3em;
+    color: var(--white);
+}
+
+.edit-task-btn{
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    display: none;
+
+    & button{
+        background: transparent;
+        height: 40px;
+        width: 40px;
+        border: 1px solid var(--purple3);
+        border-radius: 10px;
+        cursor: pointer;
+
+        & i{
+            color: var(--white);
+            font-size: 1.8em;
+        }
+    }
+}
+
+.exercice-title {
+    font-size: 1.3em;
+    width: 100%;
+    margin: 0;
+}
+
+.check-label {
+    display: block;
+    font-size: 1.3rem;
+    margin: 0.2em 0;
+}
+
+.checkbox-serie {
+    margin-right: 10px;
+    transform: scale(1.6);
+    appearance: none; 
+    width: 14px; 
+    height: 14px; 
+    border: 1px solid var(--purple3); 
+    border-radius: 5px; 
+    background-color: transparent; 
+    transition: all 0.3s ease;
+}
+
+.checkbox-serie:checked {
+    background-color: var(--purple3);
+    border-color: var(--purple3);
+}
+
+
+.checkbox-group{
+    display: flex;
+    flex-direction: column;
+    width: 3em;
+    margin-left: 0.4em;
+}
+
+.timer-btn {
+    display: flex;
+    gap: 1em;
+    align-items: center;
+    justify-content: center;
+    position: fixed; 
+    bottom: 20px; 
+    left: 50%; 
+    transform: translateX(-50%);
+    z-index: 9999; 
+    border: 1px solid var(--white);
+    background: var(--timer-black);
+    padding: 5px;
+    border-radius: 55px;
+}
+
+#cronometro {
+    background: var(--purple3);
+    padding: 0 30px;
+    border-radius: 50px;
+    font-size: 2.6rem;
+    font-weight: 600;
+}
+
+.cronometro-reset-btn {
+    border: 4px solid var(--purple3);
+    background: var(--purple3);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:active{
+        background: var(--purple4);
+    }
+}
+
+.cronometro-reset-btn i {
+    color: var(--white);
+    font-size: 30px;
+}
+
+
+@media screen and (min-width: 1024px) {
+    .tarefa-lista{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .main-tasks{
+        width: 90%;
+    }
+
+    .tarefa{
+        width: 100%;
+    }
+
+    .cronometro-reset-btn{
+        display: none;
+    }
+}   

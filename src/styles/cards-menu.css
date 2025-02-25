@@ -1,0 +1,43 @@
+.cards-menu{
+    display: flex;
+    justify-content: center; 
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.cards-select{
+    height: 80%;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    /* align-items: center; */
+    text-align: center;
+}
+
+.card-link-btn{
+    min-width: 100px;
+    min-height: 140px;
+    background: var(--purple2);
+    cursor: pointer;
+    color: var(--white);
+    font-size: 18px;
+    border-radius: 15px;
+    border-top: 1px solid var(--purple1);
+    border-bottom: 1px solid var(--purple2);
+    border-right: 1px solid var(--purple4);
+    border-left: 1px solid var(--purple4);
+    transition: .2s ease-out;
+
+    &:hover{
+        transform: scale(1.15);
+        transition: .3s ease;
+    }
+
+    &:active{
+        transform: scale(0.91);
+        transition: .1s;
+    }
+}
+
