@@ -160,3 +160,9 @@
         display: none;
     }
 }   
+
+@media screen and (min-width: 1024px) {
+    #cronometro{
+        font-size: 3.6em;
+    }
+}
