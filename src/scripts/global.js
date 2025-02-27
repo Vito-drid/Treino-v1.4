@@ -176,4 +176,111 @@ function toggleSlider() {
     }
 }
 
-//localStorage.clear()
+function resetData() {
+    // Exibe a confirmação
+    const confirmReset = confirm("Tem certeza que deseja apagar todos os dados?");
+
+    // Se o usuário confirmar, apaga os dados
+    if (confirmReset) {
+        localStorage.clear();
+        alert("Dados apagados!");
+        location.reload();
+    } else {
+        alert("Os dados não foram apagados.");
+    }
+}
+
+// Função para obter o número de tarefas visíveis, com valor padrão de 6
+function getVisibleTasks(pageId) {
+    const storedTasks = localStorage.getItem(pageId);
+    return storedTasks ? parseInt(storedTasks, 10) : 6; // Valor padrão de 6
+}
+
+// Função para salvar o número de tarefas visíveis
+function setVisibleTasks(pageId, count) {
+    localStorage.setItem(pageId, count);
+}
+
+// Função para atualizar a visibilidade das tarefas
+function updateVisibleTasks(pageId) {
+    const visibleCount = getVisibleTasks(pageId);
+    const tasks = document.querySelectorAll(`#${pageId} .tarefa`);
+    
+    tasks.forEach((task, index) => {
+        task.style.display = index < visibleCount ? 'block' : 'none';
+    });
+}
+
+// Quando o botão de definir número de tarefas for clicado
+document.querySelector('.define-number-tasks').addEventListener('click', function() {
+    const pageId = document.querySelector('.tarefa-lista').id; // ID único para a div da lista de tarefas
+    const currentVisibleTasks = getVisibleTasks(pageId);
+
+    // Pergunta ao usuário quantas tarefas ele deseja ver (entre 1 e 9)
+    const newVisibleCount = prompt('Quantas tarefas você quer ver? (Entre 1 e 9)', currentVisibleTasks);
+
+    const count = parseInt(newVisibleCount, 10);
+
+    // Verifica se o valor está entre 1 e 9
+    if (!isNaN(count) && count >= 1 && count <= 9) {
+        setVisibleTasks(pageId, count);
+        updateVisibleTasks(pageId);
+    } else {
+        alert('Por favor, insira um número entre 1 e 9.');
+    }
+});
+
+// Atualiza a visibilidade ao carregar a página
+document.addEventListener('DOMContentLoaded', function() {
+    const pageId = document.querySelector('.tarefa-lista').id;
+    updateVisibleTasks(pageId);
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Pega o ID da página atual (da div que contém a lista de tarefas)
+    const pageId = document.querySelector('.tarefa-lista').id;
+
+    // Busca as tarefas salvas no localStorage (ou um objeto vazio se não houver dados)
+    const storedTasks = JSON.parse(localStorage.getItem('tarefas')) || {};
+
+    // Obtém o número de tarefas visíveis salvas para a página atual
+    const visibleTasks = getVisibleTasks(pageId);
+
+    // Exibe no console o ID da página e o número de tarefas visíveis
+    console.log(`Página: ${pageId}`);
+    console.log(`Tarefas visíveis: ${visibleTasks}`);
+
+    // Seleciona todas as tarefas da página atual
+    const tarefas = document.querySelectorAll(`#${pageId} .tarefa`);
+
+    // Percorre cada tarefa e exibe seu título e quantidade de checkboxes visíveis
+    tarefas.forEach(tarefa => {
+        // Pega o ID da tarefa (atributo data-id de cada elemento .tarefa)
+        const id = tarefa.getAttribute('data-id');
+
+        // Busca os dados da tarefa pelo ID no localStorage (ou valores padrão)
+        const { title = `Exercise ${id}`, visibleCheckboxes = '4 padrão' } = storedTasks[id] || {};
+
+        // Exibe no console o ID, título e número de checkboxes da tarefa
+        console.log(`Tarefa ${id}: Título: "${title}", Checkboxes: ${visibleCheckboxes}`);
+    });
+});
+
+
+
+
+
